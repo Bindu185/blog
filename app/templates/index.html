@@ -1,0 +1,11 @@
+{% for book in books %}
+booktitle={{book.booktitle}}<br>
+bookid={{book.publicationid}}<br>
+
+author={{book.author}}<br>
+genre={{book.author__category}}<br>
+gender={{book.author__gender}}<br>
+<hr>
+{% endfor %}
+
+
