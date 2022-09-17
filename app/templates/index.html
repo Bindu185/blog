@@ -1,11 +1,12 @@
 {% for book in books %}
-booktitle={{book.booktitle}}<br>
-bookid={{book.publicationid}}<br>
-
-author={{book.author}}<br>
-genre={{book.author__category}}<br>
-gender={{book.author__gender}}<br>
-<hr>
+    booktitle: {{book.booktitle}}<br>
+    bookid : {{book.bookid}}<br>
+    is_available: {{book.is_available}}<br>
+    published by:{{book.author__name}}<br>
+    email id:{{book.author__email}}<br>
+    gender:{{book.author__gender}}<br>
+    <img src="http://127.0.0.1:8000/media/{{book.image}}" alt="Image not found" height="100",width="100">
+    <hr>
 {% endfor %}
 
 

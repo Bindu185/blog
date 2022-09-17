@@ -1,7 +1,8 @@
-<form action="{%url 'signup_action' %}" method="post">
+<form action="{% url 'signup_action' %}" method="POST">
      {% csrf_token %}
      <input type="email" name="email" placeholder="email"><br>
      <input type="password" name="password" placeholder="password"><br>
-     <input type="text" name="name" placeholder="name"><br>
+     <input type="text" name="name" placeholder="Name"><br>
      <button>Signup</button>
-</form>
+ 
+ </form>

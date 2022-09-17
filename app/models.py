@@ -1,26 +1,24 @@
 from django.db import models
 
 # Create your models here.
-
-class author(models.Model):
-    name=models.CharField( max_length=50)
-    mail=models.CharField(max_length=50)
-    category=models.IntegerField()
-    isActive=models.BooleanField()
-    gender=models.TextField()
+class Author(models.Model):
+    name=models.CharField(max_length=200)
+    email=models.CharField(max_length=200 , null=True , blank=True)
+    gender=models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
-        
-class library(models.Model):
-    studentname=models.CharField( max_length=50)
-    booktitle=models.CharField(max_length=50)
-    studentid=models.IntegerField()
-    publicationid=models.IntegerField()
-    author=models.ForeignKey(author, on_delete=models.CASCADE)
+
+class Library(models.Model):
+    booktitle=models.CharField(max_length=250)
+    bookid=models.IntegerField(5 , null=True , blank=True)
+    is_available=models.BooleanField(null=True , blank=True)
+
+    author=models.ForeignKey(Author,on_delete=models.CASCADE)
+    image=models.FileField(upload_to="blog/app/media/Library",null=True,blank=True)
 
     def __str__(self):
-        return self.studentname
+        return self.booktitle
 
 
 
